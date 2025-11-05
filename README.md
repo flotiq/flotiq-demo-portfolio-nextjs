@@ -68,13 +68,19 @@ npx flotiq-cli import .flotiq [flotiqApiKey]
 
 _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
 
-## Content Types
+#### Content Types
 
 The project includes pre-configured Flotiq content types:
 - **Project**: Portfolio items with galleries, descriptions, and tags
 - **About**: Company/personal information with team and journey sections
 - **Contact**: Contact information and form handling
 - **Media**: Image and file management
+
+#### Plugins
+
+If you want, to manage content for different languages or see changes in realtime, you need to add following plugins to your Flotiq account:
+- **Multilingual plugin**
+- **Live preview**
 
 ### Development
 

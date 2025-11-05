@@ -56,7 +56,7 @@ export default async function RootLayout({
             color="#0083FC"
             height={4}
             shadow=""
-            template='<div class="bar shadow-[0_3px_5px_#015bd7a1,_0_0_0px_#015bd78f]" role="bar">'
+            template='<div class="bar shadow-[0_3px_5px_#015bd7a1,0_0_0px_#015bd78f]" role="bar">'
             zIndex={100}
           />
           {isEnabled ? (

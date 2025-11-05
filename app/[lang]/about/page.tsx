@@ -105,7 +105,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
               (item, index) => (
                 <div
                   key={item.title}
-                  className="bg-background p-6 rounded-lg shadow-sm space-y-3"
+                  className="bg-background p-6 rounded-lg shadow-xs space-y-3"
                 >
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
                     <span className="text-xl font-bold text-primary">
