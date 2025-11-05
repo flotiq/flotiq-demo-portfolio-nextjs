@@ -11,7 +11,6 @@ import {
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line
 export function ModeToggle({ dictionary }: { dictionary: any }) {
   const { setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
