@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "portfolio": {
+    "title": "Moje Portfolio",
+    "description": "Zobacz moje najnowsze projekty",
+    "viewProject": "Zobacz Projekt",
+    "backToProjects": "Powrót do Projektów"
+  },
+  "theme": {
+    "light": "Jasny",
+    "dark": "Ciemny"
+  },
+  "language": {
+    "en": "Angielski",
+    "pl": "Polski"
+  },
+  "footer": {
+    "tagline": "Tworzenie pięknych doświadczeń cyfrowych, które mają znaczenie.",
+    "contactInfo": "Informacje Kontaktowe",
+    "contactForm": "Skontaktuj się",
+    "copyright": "Wszelkie prawa zastrzeżone."
+  },
+  "contact": {
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "Email"
+  }
+}

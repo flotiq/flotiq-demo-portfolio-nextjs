@@ -1,0 +1,351 @@
+{
+  "name": "contact",
+  "label": "Contact",
+  "draftPublic": true,
+  "internal": false,
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "pattern": "^$|^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+?\\.[a-zA-Z]{2,}$"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "contact_title": {
+            "type": "string"
+          },
+          "__translations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "__language"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "pattern": "^$|^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+?\\.[a-zA-Z]{2,}$"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "__language": {
+                  "type": "string",
+                  "default": "en",
+                  "minLength": 1
+                },
+                "description": {
+                  "type": "string"
+                },
+                "contact_title": {
+                  "type": "string"
+                },
+                "business_hours": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [],
+                    "properties": {
+                      "day": {
+                        "type": "string"
+                      },
+                      "hours": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "get_in_touch_title": {
+                  "type": "string"
+                },
+                "business_hours_title": {
+                  "type": "string"
+                },
+                "send_a_message_title": {
+                  "type": "string"
+                },
+                "get_in_touch_description": {
+                  "type": "string"
+                },
+                "send_a_message_description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "business_hours": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "day": {
+                  "type": "string"
+                },
+                "hours": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "get_in_touch_title": {
+            "type": "string"
+          },
+          "business_hours_title": {
+            "type": "string"
+          },
+          "send_a_message_title": {
+            "type": "string"
+          },
+          "get_in_touch_description": {
+            "type": "string"
+          },
+          "send_a_message_description": {
+            "type": "string"
+          }
+        }
+      }
+    ],
+    "required": [],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "order": [
+      "contact_title",
+      "description",
+      "get_in_touch_title",
+      "get_in_touch_description",
+      "address",
+      "phone",
+      "email",
+      "business_hours_title",
+      "business_hours",
+      "send_a_message_title",
+      "send_a_message_description",
+      "__translations"
+    ],
+    "propertiesConfig": {
+      "email": {
+        "label": "Email",
+        "unique": false,
+        "helpText": "",
+        "inputType": "email"
+      },
+      "phone": {
+        "label": "Phone",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "address": {
+        "label": "Address",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "description": {
+        "label": "Description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "contact_title": {
+        "label": "Contact title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "__translations": {
+        "items": {
+          "order": [
+            "contact_title",
+            "description",
+            "get_in_touch_title",
+            "get_in_touch_description",
+            "address",
+            "phone",
+            "email",
+            "business_hours_title",
+            "business_hours",
+            "send_a_message_title",
+            "send_a_message_description",
+            "__language"
+          ],
+          "propertiesConfig": {
+            "email": {
+              "label": "Email",
+              "unique": false,
+              "helpText": "",
+              "inputType": "email"
+            },
+            "phone": {
+              "label": "Phone",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "address": {
+              "label": "Address",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            },
+            "__language": {
+              "label": "Language",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "description": {
+              "label": "Description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            },
+            "contact_title": {
+              "label": "Contact title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "business_hours": {
+              "items": {
+                "order": [
+                  "day",
+                  "hours"
+                ],
+                "propertiesConfig": {
+                  "day": {
+                    "label": "Day",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  },
+                  "hours": {
+                    "label": "Hours",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  }
+                }
+              },
+              "label": "Business hours",
+              "unique": false,
+              "helpText": "",
+              "inputType": "object"
+            },
+            "get_in_touch_title": {
+              "label": "Get in touch title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "business_hours_title": {
+              "label": "Business hours title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "send_a_message_title": {
+              "label": "Send a message title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "get_in_touch_description": {
+              "label": "Get in touch description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            },
+            "send_a_message_description": {
+              "label": "Send a message description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            }
+          }
+        },
+        "label": "Translations",
+        "hidden": true,
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "business_hours": {
+        "items": {
+          "order": [
+            "day",
+            "hours"
+          ],
+          "propertiesConfig": {
+            "day": {
+              "label": "Day",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "hours": {
+              "label": "Hours",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            }
+          }
+        },
+        "label": "Business hours",
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "get_in_touch_title": {
+        "label": "Get in touch title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "business_hours_title": {
+        "label": "Business hours title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "send_a_message_title": {
+        "label": "Send a message title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "get_in_touch_description": {
+        "label": "Get in touch description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "send_a_message_description": {
+        "label": "Send a message description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      }
+    }
+  },
+  "featuredImage": []
+}

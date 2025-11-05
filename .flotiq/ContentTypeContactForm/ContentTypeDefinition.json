@@ -1,0 +1,64 @@
+{
+  "name": "contact_form",
+  "label": "Contact form",
+  "draftPublic": false,
+  "internal": false,
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "pattern": "^$|^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+?\\.[a-zA-Z]{2,}$",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string"
+          }
+        }
+      }
+    ],
+    "required": [
+      "name",
+      "email"
+    ],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "order": [
+      "name",
+      "email",
+      "question"
+    ],
+    "propertiesConfig": {
+      "name": {
+        "label": "Name",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "email": {
+        "label": "Email",
+        "unique": false,
+        "helpText": "",
+        "inputType": "email"
+      },
+      "question": {
+        "label": "Question",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      }
+    }
+  },
+  "featuredImage": []
+}

@@ -1,0 +1,262 @@
+{
+  "name": "project",
+  "label": "Project",
+  "draftPublic": true,
+  "internal": false,
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-_]*$",
+            "minLength": 1
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            }
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "description": {
+            "type": "string"
+          },
+          "headerImage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "__translations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "slug",
+                "__language"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "slug": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9-_]*$",
+                  "minLength": 1
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DataSource"
+                  }
+                },
+                "gallery": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DataSource"
+                  },
+                  "minItems": 0
+                },
+                "__language": {
+                  "type": "string",
+                  "default": "en",
+                  "minLength": 1
+                },
+                "description": {
+                  "type": "string"
+                },
+                "headerImage": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DataSource"
+                  },
+                  "minItems": 0
+                },
+                "short_description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "short_description": {
+            "type": "string"
+          }
+        }
+      }
+    ],
+    "required": [
+      "name",
+      "slug"
+    ],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "order": [
+      "name",
+      "slug",
+      "tags",
+      "short_description",
+      "description",
+      "headerImage",
+      "gallery",
+      "__translations"
+    ],
+    "propertiesConfig": {
+      "name": {
+        "label": "Name",
+        "unique": true,
+        "helpText": "",
+        "inputType": "text",
+        "isTitlePart": true
+      },
+      "slug": {
+        "label": "Slug",
+        "unique": true,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "tags": {
+        "label": "Tags",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationMultiple": true,
+          "relationContenttype": "_tag"
+        }
+      },
+      "gallery": {
+        "label": "Gallery",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationMultiple": true,
+          "relationContenttype": "_media"
+        }
+      },
+      "description": {
+        "label": "Description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "richtext"
+      },
+      "headerImage": {
+        "label": "Header image",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationContenttype": "_media"
+        }
+      },
+      "__translations": {
+        "items": {
+          "order": [
+            "name",
+            "slug",
+            "tags",
+            "short_description",
+            "description",
+            "headerImage",
+            "gallery",
+            "__language"
+          ],
+          "propertiesConfig": {
+            "name": {
+              "label": "Name",
+              "unique": true,
+              "helpText": "",
+              "inputType": "text",
+              "isTitlePart": true
+            },
+            "slug": {
+              "label": "Slug",
+              "unique": true,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "tags": {
+              "label": "Tags",
+              "unique": false,
+              "helpText": "",
+              "inputType": "datasource",
+              "validation": {
+                "relationMultiple": true,
+                "relationContenttype": "_tag"
+              }
+            },
+            "gallery": {
+              "label": "Gallery",
+              "unique": false,
+              "helpText": "",
+              "inputType": "datasource",
+              "validation": {
+                "relationMultiple": true,
+                "relationContenttype": "_media"
+              }
+            },
+            "__language": {
+              "label": "Language",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "description": {
+              "label": "Description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "richtext"
+            },
+            "headerImage": {
+              "label": "Header image",
+              "unique": false,
+              "helpText": "",
+              "inputType": "datasource",
+              "validation": {
+                "relationContenttype": "_media"
+              }
+            },
+            "short_description": {
+              "label": "Short description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            }
+          }
+        },
+        "label": "Translations",
+        "hidden": true,
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "short_description": {
+        "label": "Short description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      }
+    }
+  },
+  "featuredImage": []
+}

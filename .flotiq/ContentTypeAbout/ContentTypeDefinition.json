@@ -1,0 +1,581 @@
+{
+  "name": "about",
+  "label": "About",
+  "draftPublic": true,
+  "internal": false,
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "team": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DataSource"
+                  }
+                },
+                "position": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "story": {
+            "type": "string"
+          },
+          "journey": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "year": {
+                  "type": "number"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "team_title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "story_image": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            }
+          },
+          "story_title": {
+            "type": "string"
+          },
+          "mission_item": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "journey_title": {
+            "type": "string"
+          },
+          "mission_title": {
+            "type": "string"
+          },
+          "__translations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "__language"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "team": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/DataSource"
+                        }
+                      },
+                      "position": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "story": {
+                  "type": "string"
+                },
+                "journey": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [],
+                    "properties": {
+                      "year": {
+                        "type": "number"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "__language": {
+                  "type": "string",
+                  "default": "en",
+                  "minLength": 1
+                },
+                "team_title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "story_image": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DataSource"
+                  }
+                },
+                "story_title": {
+                  "type": "string"
+                },
+                "mission_item": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [],
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "journey_title": {
+                  "type": "string"
+                },
+                "mission_title": {
+                  "type": "string"
+                },
+                "team_description": {
+                  "type": "string"
+                },
+                "mission_description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "team_description": {
+            "type": "string"
+          },
+          "mission_description": {
+            "type": "string"
+          }
+        }
+      }
+    ],
+    "required": [],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "order": [
+      "name",
+      "description",
+      "story_title",
+      "story",
+      "story_image",
+      "mission_title",
+      "mission_description",
+      "mission_item",
+      "team_title",
+      "team_description",
+      "team",
+      "journey_title",
+      "journey",
+      "__translations"
+    ],
+    "propertiesConfig": {
+      "name": {
+        "label": "Name",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "team": {
+        "items": {
+          "order": [
+            "name",
+            "position",
+            "image"
+          ],
+          "propertiesConfig": {
+            "name": {
+              "label": "Name",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "image": {
+              "label": "Image",
+              "unique": false,
+              "helpText": "",
+              "inputType": "datasource",
+              "validation": {
+                "relationContenttype": "_media"
+              }
+            },
+            "position": {
+              "label": "Position",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            }
+          }
+        },
+        "label": "Team",
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "story": {
+        "label": "Story",
+        "unique": false,
+        "helpText": "",
+        "inputType": "richtext"
+      },
+      "journey": {
+        "items": {
+          "order": [
+            "year",
+            "title",
+            "description"
+          ],
+          "propertiesConfig": {
+            "year": {
+              "label": "Year",
+              "unique": false,
+              "helpText": "",
+              "inputType": "number"
+            },
+            "title": {
+              "label": "Title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "description": {
+              "label": "Description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            }
+          }
+        },
+        "label": "Journey",
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "team_title": {
+        "label": "Team title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "description": {
+        "label": "Description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "story_image": {
+        "label": "Story image",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationContenttype": "_media"
+        }
+      },
+      "story_title": {
+        "label": "Story title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "mission_item": {
+        "items": {
+          "order": [
+            "title",
+            "description"
+          ],
+          "propertiesConfig": {
+            "title": {
+              "label": "Title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "description": {
+              "label": "Description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            }
+          }
+        },
+        "label": "Mission item",
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "journey_title": {
+        "label": "Journey title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "mission_title": {
+        "label": "Mission title",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "__translations": {
+        "items": {
+          "order": [
+            "name",
+            "description",
+            "story_title",
+            "story",
+            "story_image",
+            "mission_title",
+            "mission_description",
+            "mission_item",
+            "team_title",
+            "team_description",
+            "team",
+            "journey_title",
+            "journey",
+            "__language"
+          ],
+          "propertiesConfig": {
+            "name": {
+              "label": "Name",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "team": {
+              "items": {
+                "order": [
+                  "name",
+                  "position",
+                  "image"
+                ],
+                "propertiesConfig": {
+                  "name": {
+                    "label": "Name",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  },
+                  "image": {
+                    "label": "Image",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "datasource",
+                    "validation": {
+                      "relationContenttype": "_media"
+                    }
+                  },
+                  "position": {
+                    "label": "Position",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  }
+                }
+              },
+              "label": "Team",
+              "unique": false,
+              "helpText": "",
+              "inputType": "object"
+            },
+            "story": {
+              "label": "Story",
+              "unique": false,
+              "helpText": "",
+              "inputType": "richtext"
+            },
+            "journey": {
+              "items": {
+                "order": [
+                  "year",
+                  "title",
+                  "description"
+                ],
+                "propertiesConfig": {
+                  "year": {
+                    "label": "Year",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "number"
+                  },
+                  "title": {
+                    "label": "Title",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  },
+                  "description": {
+                    "label": "Description",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "textarea"
+                  }
+                }
+              },
+              "label": "Journey",
+              "unique": false,
+              "helpText": "",
+              "inputType": "object"
+            },
+            "__language": {
+              "label": "Language",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "team_title": {
+              "label": "Team title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "description": {
+              "label": "Description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            },
+            "story_image": {
+              "label": "Story image",
+              "unique": false,
+              "helpText": "",
+              "inputType": "datasource",
+              "validation": {
+                "relationContenttype": "_media"
+              }
+            },
+            "story_title": {
+              "label": "Story title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "mission_item": {
+              "items": {
+                "order": [
+                  "title",
+                  "description"
+                ],
+                "propertiesConfig": {
+                  "title": {
+                    "label": "Title",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "text"
+                  },
+                  "description": {
+                    "label": "Description",
+                    "unique": false,
+                    "helpText": "",
+                    "inputType": "textarea"
+                  }
+                }
+              },
+              "label": "Mission item",
+              "unique": false,
+              "helpText": "",
+              "inputType": "object"
+            },
+            "journey_title": {
+              "label": "Journey title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "mission_title": {
+              "label": "Mission title",
+              "unique": false,
+              "helpText": "",
+              "inputType": "text"
+            },
+            "team_description": {
+              "label": "Team description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            },
+            "mission_description": {
+              "label": "Mission description",
+              "unique": false,
+              "helpText": "",
+              "inputType": "textarea"
+            }
+          }
+        },
+        "label": "Translations",
+        "hidden": true,
+        "unique": false,
+        "helpText": "",
+        "inputType": "object"
+      },
+      "team_description": {
+        "label": "Team description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "mission_description": {
+        "label": "Mission description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      }
+    }
+  },
+  "featuredImage": []
+}

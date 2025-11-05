@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "description": "Check out my latest projects",
+    "viewProject": "View Project",
+    "backToProjects": "Back to Projects"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "en": "English",
+    "pl": "Polish"
+  },
+  "footer": {
+    "tagline": "Creating beautiful digital experiences that make a difference.",
+    "contactInfo": "Contact Information",
+    "contactForm": "Get in Touch",
+    "copyright": "All rights reserved."
+  },
+  "contact": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
+  }
+}
