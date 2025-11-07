@@ -100,7 +100,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Flotiq codegen - install SDK
 
-This project usses [Flotiq API SDK](https://www.npmjs.com/package/@flotiq/flotiq-api-sdk) library for types safety and IDE autocompletion of user data types.
+This project uses [Flotiq API SDK](https://www.npmjs.com/package/@flotiq/flotiq-api-sdk) library for types safety and IDE autocompletion of user data types.
 
 If you make any changes (additions or deletions) to the `content type definitions` in your Flotiq account, you need to run:
 
@@ -137,6 +137,62 @@ If you want to learn more about Flotiq, take a look at the Flotiq documentation:
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-demo-portfolio-nextjs&env=FLOTIQ_API_KEY,FLOTIQ_EDITOR_KEY&envDescription=Variables%20needed%20for%20the%20application.&envLink=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-demo-portfolio-nextjs%3Ftab%3Dreadme-ov-file%23env-variables)
+
+You can also deploy this project to [Heroku](https://www.heroku.com/) in 3 minutes:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/flotiq/flotiq-demo-portfolio-nextjs)
+
+Or to [Netlify](https://www.netlify.com/):
+
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-demo-portfolio-nextjs)
+
+### Env variables:
+
+Project requires the following variables to start:
+
+| Name                | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `FLOTIQ_EDITOR_KEY` | The key used to [revalidate cache](#nextjs-data-cache) and live preview |
+| `FLOTIQ_API_KEY`    | Flotiq Read API key for blogpost content objects                        |
+
+### Next.js Data Cache
+
+This starter utilizes a [data caching mechanism in the Next.js application](https://nextjs.org/docs/app/building-your-application/caching#data-cache). After fetching, the data is cached, which means that the cache must be cleared to see the latest data. In this starter, we provide a special API endpoint that clears the cache. You can call it directly or use webhooks that will do it automatically after saving a blog post (both for adding a new entry and editing an existing one).
+
+#### API Endpoint
+
+To send a request to the endpoint that clears cache, use following command:
+
+```bash
+curl -X POST https://your-domain.com/api/flotiq/revalidate \
+     -H "x-editor-key: <FLOTIQ_EDITOR_KEY>"
+```
+
+Replace `https://your-domain.com` with your actual `URL` and `FLOTIQ_EDITOR_KEY` with the appropriate authorization key value.
+
+#### Webhooks in Flotiq space
+
+To add a webhook that automatically clears the cache after saving any object, follow these instructions:
+
+1. Go to [Flotiq dashboard](https://editor.flotiq.com/login)
+2. Go to the _Webhooks_ page and click _Add new webhook_
+3. Name the webhook (e.g. Clear portfolio cache)
+4. Paste the URL to your revalidate endpoint, eg. `https://your-domain.com/api/flotiq/revalidate`
+5. As a webhook type choose **Content Object Changes Asynchronous (non-blocking)**
+6. Enable the webhook
+7. As a trigger, choose **Create**, **Update** and **Delete** actions on all Content Types
+8. Add new header with following fields:
+    - **Header Name** - `x-editor-key`
+    - **Header Value** - value for `FLOTIQ_EDITOR_KEY` env variable in your deployment
+9. Save the webhook
+
+Example webhook configuration:
+
+<img src=".docs/example-webhook.png" alt="Example webhook configuration" width="500px" />
+
+**Warning!** The webhook URL must be public. In development mode, caching is not applied, so the user does not need to worry about manually clearing the cache on `http://localhost:3000`.
 
 ## Collaborating
 

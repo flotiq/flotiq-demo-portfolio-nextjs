@@ -8,6 +8,6 @@ export async function POST(req: NextRequest) {
     return new Response('Unauthorized', { status: 401 });
   }
 
-  revalidateTag('flotiq-content');
+  revalidateTag('flotiq-content', 'max');
   return new NextResponse(undefined, { status: 204 });
 }

@@ -8,13 +8,7 @@ const nextConfig: NextConfig = {
         hostname: 'api.flotiq.com',
         port: '',
         pathname: '/image/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'new-cms-staging.api.dev.cdwv.pl',
-        port: '',
-        pathname: '/image/**',
-      },
+      }
     ],
   },
 };
