@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-* Updated @flotiq/nextjs-live-preview from ^0.6.2 to ^0.8.0-alpha.2 to validate compatibility with the new collaboration server.
-* Migrated live preview bindings on content pages and footer components to the newer data={...} integration expected by the updated Flotiq live preview package.
+* Updated `@flotiq/nextjs-live-preview` from `^0.6.2` to `^0.8.0-alpha.2` to validate compatibility with the new collaboration server.
+* Migrated live preview bindings on content pages and footer components to the newer `data={...}` integration expected by the updated Flotiq live preview package.
 
 ### Fixed
 
