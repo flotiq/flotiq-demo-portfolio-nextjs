@@ -43,11 +43,7 @@ export default async function PortfolioPage({ params }: PortfolioPageParams) {
 
       <div className="space-y-4">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          <LivePreviewBox
-            objectId={project?.id || 'add'}
-            ctdName={'project'}
-            fieldName={getFieldName('name', lang)}
-          >
+          <LivePreviewBox data={project} fieldName={getFieldName('name', lang)}>
             {getTranslatedField(project, 'name', lang)}
           </LivePreviewBox>
         </h1>
@@ -72,9 +68,8 @@ export default async function PortfolioPage({ params }: PortfolioPageParams) {
         )}
       </div>
       <LivePreviewBox
-        objectId={project?.id || 'add'}
+        data={project}
         fieldName={getFieldName('description', lang)}
-        ctdName={'project'}
       >
         <div
           className="prose max-w-none dark:prose-invert text-lg"

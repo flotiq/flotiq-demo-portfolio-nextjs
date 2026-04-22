@@ -6,14 +6,19 @@ import { createNextLivePreviewMiddleware } from '@flotiq/nextjs-live-preview';
 
 if (!process.env.FLOTIQ_API_KEY) {
   throw new Error(
-    "FLOTIQ_API_KEY is required to access the blogpost data. Check env variable section in README for more information",
+    'FLOTIQ_API_KEY is required to access the blogpost data. Check env variable section in README for more information',
   );
 }
 
 export const flotiqApiClient = new Flotiq({
   apiKey: process.env.FLOTIQ_API_KEY,
 
-  middleware: [createNextMiddleware(), createNextLivePreviewMiddleware()],
+  middleware: [
+    createNextMiddleware(),
+    createNextLivePreviewMiddleware({
+      singletonTypes: ['contact', 'about'],
+    }),
+  ],
 });
 
 export const content = flotiqApiClient.content;

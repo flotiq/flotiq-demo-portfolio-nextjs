@@ -39,5 +39,5 @@ export function getTranslatedField<
 }
 
 export function getFieldName(key: string, lang: string): string {
-  return lang === 'en' ? key : `__translations.[0].${key}`;
+  return lang === 'en' ? key : `__translations[0].${key}`;
 }

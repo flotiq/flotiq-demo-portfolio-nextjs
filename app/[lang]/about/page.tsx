@@ -20,18 +20,13 @@ export default async function AboutPage({ params }: AboutPageParams) {
   return (
     <div className="space-y-16">
       <div className="space-y-4">
-        <LivePreviewBox
-          objectId={aboutData?.id || 'add'}
-          ctdName={'about'}
-          fieldName={getFieldName('name', lang)}
-        >
+        <LivePreviewBox data={aboutData} fieldName={getFieldName('name', lang)}>
           <h1 className="text-4xl font-bold tracking-tight">
             {getTranslatedField(aboutData, 'name', lang)}
           </h1>
         </LivePreviewBox>
         <LivePreviewBox
-          objectId={aboutData?.id || 'add'}
-          ctdName={'about'}
+          data={aboutData}
           fieldName={getFieldName('description', lang)}
         >
           <p className="text-xl text-muted-foreground max-w-3xl">
@@ -44,8 +39,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
       <section className="grid gap-8 md:grid-cols-2 items-center">
         <div className="space-y-4">
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('story_title', lang)}
           >
             <h2 className="text-3xl font-semibold">
@@ -53,8 +47,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
             </h2>
           </LivePreviewBox>
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('story', lang)}
           >
             <div
@@ -82,8 +75,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
       <section className="bg-muted/40 -mx-4 px-4 py-12 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 rounded-lg">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('mission_title', lang)}
           >
             <h2 className="text-3xl font-semibold">
@@ -91,8 +83,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
             </h2>
           </LivePreviewBox>
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('mission_description', lang)}
           >
             <p className="text-lg text-muted-foreground">
@@ -125,8 +116,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
       <section className="space-y-8">
         <div className="text-center space-y-4">
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('team_title', lang)}
           >
             <h2 className="text-3xl font-semibold">
@@ -134,8 +124,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
             </h2>
           </LivePreviewBox>
           <LivePreviewBox
-            objectId={aboutData?.id || 'add'}
-            ctdName={'about'}
+            data={aboutData}
             fieldName={getFieldName('team_description', lang)}
           >
             <p className="text-lg text-muted-foreground">
@@ -169,8 +158,7 @@ export default async function AboutPage({ params }: AboutPageParams) {
       {/* Timeline */}
       <section className="space-y-8">
         <LivePreviewBox
-          objectId={aboutData?.id || 'add'}
-          ctdName={'about'}
+          data={aboutData}
           fieldName={getFieldName('journey_title', lang)}
         >
           <h2 className="text-3xl font-semibold">

@@ -23,8 +23,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
     <div className="space-y-12">
       <div className="space-y-4">
         <LivePreviewBox
-          objectId={contactData?.id || 'add'}
-          ctdName={'contact'}
+          data={contactData}
           fieldName={getFieldName('contact_title', lang)}
         >
           <h1 className="text-4xl font-bold tracking-tight">
@@ -32,8 +31,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
           </h1>
         </LivePreviewBox>
         <LivePreviewBox
-          objectId={contactData?.id || 'add'}
-          ctdName={'contact'}
+          data={contactData}
           fieldName={getFieldName('description', lang)}
         >
           <p className="text-xl text-muted-foreground max-w-3xl">
@@ -46,8 +44,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
         <div className="space-y-6">
           <div className="space-y-4">
             <LivePreviewBox
-              objectId={contactData?.id || 'add'}
-              ctdName={'contact'}
+              data={contactData}
               fieldName={getFieldName('get_in_touch_title', lang)}
             >
               <h2 className="text-2xl font-semibold">
@@ -55,8 +52,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
               </h2>
             </LivePreviewBox>
             <LivePreviewBox
-              objectId={contactData?.id || 'add'}
-              ctdName={'contact'}
+              data={contactData}
               fieldName={getFieldName('get_in_touch_description', lang)}
             >
               <p className="text-lg text-muted-foreground">
@@ -75,8 +71,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
               <div>
                 <h3 className="font-medium">{dict.contact.address}</h3>
                 <LivePreviewBox
-                  objectId={contactData?.id || 'add'}
-                  ctdName={'contact'}
+                  data={contactData}
                   fieldName={getFieldName('address', lang)}
                 >
                   <address className="not-italic text-muted-foreground">
@@ -98,8 +93,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
               <div>
                 <h3 className="font-medium">{dict.contact.phone}</h3>
                 <LivePreviewBox
-                  objectId={contactData?.id || 'add'}
-                  ctdName={'contact'}
+                  data={contactData}
                   fieldName={getFieldName('phone', lang)}
                 >
                   <p className="text-muted-foreground">
@@ -114,9 +108,8 @@ export default async function ContactPage({ params }: ContactPageParams) {
               <div>
                 <h3 className="font-medium">{dict.contact.email}</h3>
                 <LivePreviewBox
-                  objectId={contactData?.id || 'add'}
-                  ctdName={'contact'}
-                  fieldName={getFieldName('phone', lang)}
+                  data={contactData}
+                  fieldName={getFieldName('email', lang)}
                 >
                   <a
                     href={`mailto:${getTranslatedField(contactData, 'email', lang)}`}
@@ -131,8 +124,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
 
           <div className="space-y-4">
             <LivePreviewBox
-              objectId={contactData?.id || 'add'}
-              ctdName={'contact'}
+              data={contactData}
               fieldName={getFieldName('business_hours_title', lang)}
             >
               <h2 className="text-2xl font-semibold">
@@ -155,8 +147,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
         <div className="space-y-6">
           <div className="space-y-4">
             <LivePreviewBox
-              objectId={contactData?.id || 'add'}
-              ctdName={'contact'}
+              data={contactData}
               fieldName={getFieldName('send_a_message_title', lang)}
             >
               <h2 className="text-2xl font-semibold">
@@ -164,8 +155,7 @@ export default async function ContactPage({ params }: ContactPageParams) {
               </h2>
             </LivePreviewBox>
             <LivePreviewBox
-              objectId={contactData?.id || 'add'}
-              ctdName={'contact'}
+              data={contactData}
               fieldName={getFieldName('send_a_message_description', lang)}
             >
               <p className="text-muted-foreground">
